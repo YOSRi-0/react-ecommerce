@@ -1,13 +1,13 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-import './shop.styles.scss';
+import { ShopPageContainer } from './shop.styles';
 
 const Shop = () => {
   return (
-    <div className="shop-page">
+    <ShopPageContainer>
       <Outlet />
-    </div>
+    </ShopPageContainer>
   );
 };
 

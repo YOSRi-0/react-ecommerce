@@ -2,7 +2,11 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import './collection.styles.scss';
+import {
+  CollectionPageContainer,
+  ItemsContainer,
+  Title,
+} from './collection.styles';
 
 import { selectShopCollections } from '../../redux/collection/collection.selectors';
 import { useParams } from 'react-router-dom';
@@ -14,14 +18,14 @@ const CollectionPage = ({ collections }) => {
   const collection = collections[collectionId];
   console.log(collectionId, collection);
   return (
-    <div className="collection-page">
-      <h2 className="title">{collection.title}</h2>
-      <div className="items">
+    <CollectionPageContainer>
+      <Title>{collection.title}</Title>
+      <ItemsContainer>
         {collection.items.map((item) => (
           <CollectionItem key={item.id} item={item} />
         ))}
-      </div>
-    </div>
+      </ItemsContainer>
+    </CollectionPageContainer>
   );
 };
 
