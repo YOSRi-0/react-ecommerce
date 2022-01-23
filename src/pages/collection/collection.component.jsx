@@ -15,7 +15,7 @@ import CollectionItem from '../../components/collection-item/collection-item.com
 const CollectionPage = ({ collections }) => {
   const { collectionId } = useParams();
 
-  const collection = collections[collectionId];
+  const collection = collections ? collections[collectionId] : null;
   console.log(collectionId, collection);
   return (
     <CollectionPageContainer>

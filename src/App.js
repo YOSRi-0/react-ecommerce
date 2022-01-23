@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate, Outlet } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import './App.css';
@@ -47,10 +47,7 @@ class App extends React.Component {
         <Header />
         <Routes>
           <Route exact path="/" element={<HomePage />} />
-          <Route path="/shop" element={<Shop />}>
-            <Route path="" element={<CollectionOverview />} />
-            <Route exact path=":collectionId" element={<CollectionPage />} />
-          </Route>
+          <Route path="/shop/*" element={<Shop />} />
           <Route exact path="/checkout" element={<CheckoutPage />} />
           <Route
             exact
