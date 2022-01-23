@@ -8,7 +8,7 @@ import {
   Title,
 } from './collection.styles';
 
-import { selectShopCollections } from '../../redux/collection/collection.selectors';
+import { selectShopCollections } from '../../redux/shop/shop.selectors';
 import { useParams } from 'react-router-dom';
 import CollectionItem from '../../components/collection-item/collection-item.component';
 
