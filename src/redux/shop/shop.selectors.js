@@ -27,3 +27,8 @@ export const selectCollectionsPreview = createSelector(
 //       (collection) => collection.id === COLLECTION_ID_MAP[collectionId]
 //     )
 //   );
+
+export const selectIsCollectionFetching = createSelector(
+  [selectShop],
+  (shop) => shop.isFetching
+);
