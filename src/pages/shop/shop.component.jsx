@@ -1,19 +1,13 @@
 import React from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
 
 import { fetchCollectionsStartAsync } from '../../redux/shop/shop.actions';
 
-import CollectionOverview from '../../components/collection-overview/collection-overview.component';
-import CollectionPage from '../collection/collection.component';
-import WithSpinner from '../../components/with-spinner/with-spinner.component';
-
 import { ShopPageContainer } from './shop.styles';
-import { selectIsCollectionFetching } from '../../redux/shop/shop.selectors';
+import CollectionOverviewContainer from '../../components/collection-overview/collection-overview.container';
+import CollectionPageContainer from '../collection/collection.container';
 
-const CollectionOverviewWithSpinner = WithSpinner(CollectionOverview);
-const CollectionPageWithSpinner = WithSpinner(CollectionPage);
 class Shop extends React.Component {
   componentDidMount() {
     const { fetchCollectionsStartAsync } = this.props;
@@ -21,7 +15,6 @@ class Shop extends React.Component {
   }
 
   render() {
-    const { isCollectionFetching } = this.props;
     return (
       <ShopPageContainer>
         <Routes>
@@ -30,9 +23,7 @@ class Shop extends React.Component {
             // render={(props) => (
             //   <CollectionOverviewWithSpinner isLoading={loading} {...props} />
             // )}
-            element={
-              <CollectionOverviewWithSpinner isLoading={isCollectionFetching} />
-            }
+            element={<CollectionOverviewContainer />}
           />
           <Route
             exact
@@ -40,9 +31,7 @@ class Shop extends React.Component {
             // render={(props) => (
             //   <CollectionPageWithSpinner isLoading={loading} {...props} />
             // )}
-            element={
-              <CollectionPageWithSpinner isLoading={isCollectionFetching} />
-            }
+            element={<CollectionPageContainer />}
           />
         </Routes>
         <Outlet />
@@ -51,12 +40,8 @@ class Shop extends React.Component {
   }
 }
 
-const mapStateToProps = createStructuredSelector({
-  isCollectionFetching: selectIsCollectionFetching,
-});
-
 const mapDispatchToProps = (dispatch) => ({
   fetchCollectionsStartAsync: () => dispatch(fetchCollectionsStartAsync()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Shop);
+export default connect(null, mapDispatchToProps)(Shop);
