@@ -10,7 +10,7 @@ import CollectionItem from '../collection-item/collection-item.component';
 
 const CollectionPreview = ({ title, items }) => (
   <CollectionPreviewContainer>
-    <Title>{title}</Title>
+    <Title to={`${title.toLowerCase()}`}>{title}</Title>
     <PreviewContainer>
       {items
         .filter((item, idx) => idx < 4)
