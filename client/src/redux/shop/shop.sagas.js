@@ -11,7 +11,6 @@ import {
 import shopActionTypes from './shop.types';
 
 export function* fetchCollectionAsync() {
-  yield console.log("i'm tired");
   try {
     const collectionRef = firestore.collection('collections');
     const snapshot = yield collectionRef.get();
@@ -23,15 +22,6 @@ export function* fetchCollectionAsync() {
   } catch (error) {
     yield put(fetchCollectionsFailure(error.message));
   }
-  // dispatch(fetchCollectionsStart());
-
-  // collectionRef
-  //   .get()
-  //   .then((snapshot) => {
-  //     const collectionsMap = convertCollectionsSnapshopToMap(snapshot);
-  //     dispatch(fetchCollectionsSuccess(collectionsMap));
-  //   })
-  //   .catch((error) => dispatch(fetchCollectionsFailure(error.message)));
 }
 
 export function* fetchCollectionsStart() {

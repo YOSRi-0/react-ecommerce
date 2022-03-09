@@ -17,7 +17,6 @@ const CollectionPage = () => {
   const { collectionId } = useParams();
 
   const collection = collections ? collections[collectionId] : null;
-  console.log(collectionId, collection);
   return (
     <CollectionPageContainer>
       <Title>{collection.title}</Title>
