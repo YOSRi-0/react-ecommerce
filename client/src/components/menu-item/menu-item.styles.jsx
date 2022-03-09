@@ -48,6 +48,11 @@ export const MenuItemContainer = styled.div`
     height: ${({ size }) => (size === 'large' ? '380px' : '240px')};
 
 
+  @media screen and (max-width: 768px) {
+    min-width: 40%;
+    height: 200px
+  }
+
   &:hover {
     cursor: pointer;
 
@@ -63,10 +68,15 @@ export const MenuItemContainer = styled.div`
 
   &:first-child {
     margin-right: 7.5px;
+
+  @media screen and (max-width: 768px) {
+    margin-right: 0
+  }
   }
 
   &:last-child {
     margin-left: 7.5px;
-  }
 
+
+  }
   }`;

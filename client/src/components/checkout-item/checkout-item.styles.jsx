@@ -31,6 +31,10 @@ export const QuantityContainer = styled.span`
   padding-left: 20px;
   display: flex;
   ${ColumnStyles}
+
+  @media screen and (max-width: 768px) {
+    padding-left: 10px;
+  }
 `;
 
 export const Arrow = styled.div`
@@ -39,6 +43,10 @@ export const Arrow = styled.div`
 
 export const QuantityValue = styled.span`
   margin: 0 10px;
+
+  @media screen and (max-width: 768px) {
+    margin: 0 5px;
+  }
 `;
 
 export const Price = styled.span`

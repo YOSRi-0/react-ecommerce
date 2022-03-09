@@ -10,12 +10,22 @@ export const CollectionItemContainer = styled.div`
   position: relative;
   cursor: pointer;
 
+  @media screen and (max-width: 768px) {
+    width: 45vw;
+    height: 250px;
+  }
+
   button {
     width: 80%;
     opacity: 0.7;
     position: absolute;
-    top: 255px;
+    top: 155px;
     display: none;
+
+    @media screen and (max-width: 768px) {
+      opacity: 0.9;
+      display: block;
+    }
   }
 
   &:hover button {

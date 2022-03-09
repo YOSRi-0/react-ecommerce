@@ -8,6 +8,15 @@ export const CheckoutPageContainer = styled.div`
   align-items: center;
   margin: 50px auto 0;
 
+  @media screen and (max-width: 768px) {
+    padding: 10px;
+    width: 100%;
+
+    @media screen and (max-width: 768px) {
+      padding: 20px;
+    }
+  }
+
   button {
     margin-left: auto;
     margin-top: 40px;
