@@ -19,10 +19,11 @@ export const CollectionItemContainer = styled.div`
     width: 80%;
     opacity: 0.7;
     position: absolute;
-    top: 155px;
+    top: 255px;
     display: none;
 
     @media screen and (max-width: 768px) {
+      top: 155px;
       opacity: 0.9;
       display: block;
     }
