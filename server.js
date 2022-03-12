@@ -46,3 +46,9 @@ app.post('/payment', (req, res) => {
     }
   });
 });
+
+app.get('/serviceWorkerRegistration', (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, '..', 'build', 'serviceWorkerRegistration.js')
+  );
+});
